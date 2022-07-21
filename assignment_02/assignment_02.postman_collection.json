@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "0d20825d-ad37-41e3-a66a-095325bd8747",
+		"name": "assignment_02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userSignup",
+			"item": [
+				{
+					"name": "userSignup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"random\",\r\n    \"userAge\": 80,\r\n    \"userPhone\": \"0123456789\",\r\n    \"userEmail\": \"random@gmail.com\",\r\n    \"userPassword\": \"123456\",\r\n    \"userConformationPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/users/signup",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userSignin",
+			"item": [
+				{
+					"name": "userSignin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"random@gmail.com\",\r\n    \"userPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/users/signin",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userUpdate",
+			"item": [
+				{
+					"name": "userUpdate",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"updated\",\r\n    \"userAge\": 100,\r\n    \"userPhone\": \"01000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/users/update/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"update",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userDelete",
+			"item": [
+				{
+					"name": "userDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users/delete/4",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getAllUsers",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users/all",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getAllUsersWithQueryParams",
+			"item": [
+				{
+					"name": "getAllUsersWithQueryParamsStartsWith",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users?searchType=start&name=a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "searchType",
+									"value": "start"
+								},
+								{
+									"key": "name",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsersWithQueryParamsEndsWith",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users?searchType=end&name=a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "searchType",
+									"value": "end"
+								},
+								{
+									"key": "name",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getUserById",
+			"item": [
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users/user?id=6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getAllUsersWithAgeBetween",
+			"item": [
+				{
+					"name": "getAllUsersWithAgeBetween",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users/between?age1=20&age2=80",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"between"
+							],
+							"query": [
+								{
+									"key": "age1",
+									"value": "20"
+								},
+								{
+									"key": "age2",
+									"value": "80"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getAllUsersWithNameStartWithAAndAgeLessThan30",
+			"item": [
+				{
+					"name": "getAllUsersWithNameStartWithAAndAgeLessThan30",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/users/between-v2?nameStartWith=a&ageLessThan=30",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"users",
+								"between-v2"
+							],
+							"query": [
+								{
+									"key": "nameStartWith",
+									"value": "a"
+								},
+								{
+									"key": "ageLessThan",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}

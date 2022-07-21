@@ -1,0 +1,16 @@
+{
+  "author": "",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "app.js",
+  "name": "session_04",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "d4e9b03c-5b09-4f5c-ad78-6721e78eaefe",
+		"name": "session_07",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ahmed\",\r\n    \"email\": \"ahmed2@ahmed.ahmed\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\",\r\n    \"phone\": \"010022654\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signup",
+							"host": [
+								"{{domain}}signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahmed0@ahmed.ahmed\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signin",
+							"host": [
+								"{{domain}}signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated\",\r\n    \"phone\": \"000000000000000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}update/62640ec9d1945b7030491071",
+							"host": [
+								"{{domain}}update"
+							],
+							"path": [
+								"62640ec9d1945b7030491071"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}allUsers",
+							"host": [
+								"{{domain}}allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated\",\r\n    \"phone\": \"000000000000000000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}delete/62640ec9d1945b7030491071",
+							"host": [
+								"{{domain}}delete"
+							],
+							"path": [
+								"62640ec9d1945b7030491071"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQ1OGZlNTMwMjI2ZjEwMzBmYzI3MyIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTA3NDc1ODJ9.5ogMQXdq6nkuAfExvqlouCp9NqahvqyiQ2gXY-MD1zQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQ1OGZlNTMwMjI2ZjEwMzBmYzI3MyIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTA3NDc1ODJ9.5ogMQXdq6nkuAfExvqlouCp9NqahvqyiQ2gXY-MD1zQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}user/profile",
+							"host": [
+								"{{domain}}user"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000/",
+			"type": "default"
+		}
+	]
+}

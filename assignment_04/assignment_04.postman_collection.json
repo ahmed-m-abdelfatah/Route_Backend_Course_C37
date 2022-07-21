@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "6ec5f32d-d090-4496-bbba-bff05bae1b62",
+		"name": "assignment_04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test.test\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\",\r\n    \"phone\": \"010022654\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signup",
+							"host": [
+								"{{domain}}signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.test\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signin",
+							"host": [
+								"{{domain}}signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQ4YWE3ZmEzMzA4MWZhMjFjMjA4NSIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwMDQxMjJ9.Yz4Os6I6SyT6HfT_wcoEQ9gOvg8ApCYziSGBgWL4Fzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated33333\",\r\n    \"phone\": \"33333333333333333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}update",
+							"host": [
+								"{{domain}}update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQ4YWE3ZmEzMzA4MWZhMjFjMjA4NSIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwMDQxMjJ9.Yz4Os6I6SyT6HfT_wcoEQ9gOvg8ApCYziSGBgWL4Fzo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated33333\",\r\n    \"phone\": \"33333333333333333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}delete",
+							"host": [
+								"{{domain}}delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}allUsers",
+							"host": [
+								"{{domain}}allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg1N2I0MDQwZDAyNjczZTBjMTg1NiIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwMDUzNzR9.gfLTVZidJA5C2Mfwpr17ux3m24cUAH33C954sEkoRXs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjQ1OGZlNTMwMjI2ZjEwMzBmYzI3MyIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTA3NDc1ODJ9.5ogMQXdq6nkuAfExvqlouCp9NqahvqyiQ2gXY-MD1zQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}user/profile",
+							"host": [
+								"{{domain}}user"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDeleteUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}softDeleteUser/626857b4040d02673e0c1856",
+							"host": [
+								"{{domain}}softDeleteUser"
+							],
+							"path": [
+								"626857b4040d02673e0c1856"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg1N2I0MDQwZDAyNjczZTBjMTg1NiIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwODg5NDd9.lYWW0FCDj3SUe0Tod4fJEyM_sGgLZSruOjUYak1x73A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"product\",\r\n    \"description\": \"description ....\",\r\n    \"price\": \"1200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}addProduct",
+							"host": [
+								"{{domain}}addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg1N2I0MDQwZDAyNjczZTBjMTg1NiIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwODg5NDd9.lYWW0FCDj3SUe0Tod4fJEyM_sGgLZSruOjUYak1x73A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"62699ff472ad7db089795610\",\r\n    \"title\": \"updatted product\",\r\n    \"description\": \"updated description ....\",\r\n    \"price\": \"9999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}updateProduct",
+							"host": [
+								"{{domain}}updateProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg1N2I0MDQwZDAyNjczZTBjMTg1NiIsImlzU2lnbmluIjp0cnVlLCJpYXQiOjE2NTEwODg5NDd9.lYWW0FCDj3SUe0Tod4fJEyM_sGgLZSruOjUYak1x73A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"62699ff972ad7db089795613\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}deleteProduct",
+							"host": [
+								"{{domain}}deleteProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsWithTheirOwnerInformations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}getAllProductsWithTheirOwnerInformations",
+							"host": [
+								"{{domain}}getAllProductsWithTheirOwnerInformations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsForSepcificUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}getAllProductsForSepcificUser?userId=626857b4040d02673e0c1856",
+							"host": [
+								"{{domain}}getAllProductsForSepcificUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "626857b4040d02673e0c1856"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000/",
+			"type": "default"
+		}
+	]
+}

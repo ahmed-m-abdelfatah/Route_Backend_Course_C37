@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "01bf465b-e699-4861-92c0-c968b5e702f8",
+		"name": "assignment_10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "addBlogPics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ahmed/Desktop/thispersondoesnotexist_01.jpg"
+								},
+								{
+									"key": "id",
+									"value": "62d8b9f9f2d7c075c081f0dd",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/blog/add-pics",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"blog",
+								"add-pics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg0OTlmZTlmYTU4NTFiNWZmNWQ3MCIsImlhdCI6MTY1ODM0NDI1N30.heuTbgP_TtVEjOD43AKWuuXDypoZ4st3Js1ppD9zQJA",
+			"type": "default"
+		}
+	]
+}

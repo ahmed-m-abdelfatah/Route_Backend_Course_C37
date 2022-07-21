@@ -1,0 +1,1289 @@
+{
+	"info": {
+		"_postman_id": "0f2affcc-f748-49c3-afaf-08f36b596cf9",
+		"name": "exam_01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "administration",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/users?page=1&size=2",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/user/:id/role",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								":id",
+								"role"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "user_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/user/:id/block",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								":id",
+								"block"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "user_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/user/:id/delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								":id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "user_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/user/:id/soft-delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								":id",
+								"soft-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "user_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/product/:id/delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								":id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/product/:id/soft-delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								":id",
+								"soft-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/admin/comment/:id/soft-delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"admin",
+								"comment",
+								":id",
+								"soft-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "comment_id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"takened126@jrvps.com\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\",\r\n    \"age\": \"26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/auth/signup",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"reledam476@kahase.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/auth/login",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/auth/logout",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"reledam476@kahase.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/auth/sendCode",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"auth",
+								"sendCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"reledam476@kahase.com\",\r\n    \"newPassword\": \"123\",\r\n    \"cNewPassword\": \"123\",\r\n    \"code\": \"4977\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/auth/forgetPassword",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "display profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"takened126@jrvps.com\",\r\n    \"phone\": \"01094400928\",\r\n    \"gender\": \"male\",\r\n    \"age\": \"26\",\r\n    \"firstName\": \"Ahmed\",\r\n    \"lastName\": \"Mohamed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/update",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"123\",\r\n    \"newPassword\": \"1234\",\r\n    \"cNewPassword\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/password",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfilePic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_01.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_02.jpg"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/pic",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"pic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfileCoverPic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ahmed/Desktop/thispersondoesnotexist_03.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/coverPic",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"coverPic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "qr",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/qr",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"qr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deActive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/profile/deActive",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"deActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/user/get-all-users?page=1&size=2",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"user",
+								"get-all-users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productTitle\": \"iphone\",\r\n    \"productDesc\": \"very expensive useless phone\",\r\n    \"productPrice\": \"1200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/add",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productTitle\": \"samsung\",\r\n    \"productDesc\": \"very cheap useless phone\",\r\n    \"productPrice\": \"120\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/update",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"update"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/soft-delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"soft-delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/like",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product to wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/wishlist",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"wishlist"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hide product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/product/:id/hide",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"product",
+								":id",
+								"hide"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "add comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"product_id\",\r\n    \"commentBody\": \"this is a comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/comment/add",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"comment",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"replyContent\": \"reply on reply\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/comment/:commentId/:productId/reply",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"comment",
+								":commentId",
+								":productId",
+								"reply"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "comment_id"
+								},
+								{
+									"key": "productId",
+									"value": "product_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentBody\": \"updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}/comment/:id/update",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"comment",
+								":id",
+								"update"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "comment_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/comment/:id/delete",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"comment",
+								":id",
+								"delete"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "comment_id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}/comment/:id/like",
+							"host": [
+								"{{domain}}{{channel}}"
+							],
+							"path": [
+								"comment",
+								":id",
+								"like"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "comment_id"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "channel",
+			"value": "/api/dev/v1",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmQ3MTgzODMxZDFlMDMzODA1ZjE1NCIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1NjU4NDQyNH0.R04vpicJNvG5kgq1BjLA1eJ0VA0CmhbSy22vRJl7Koo",
+			"type": "default"
+		}
+	]
+}

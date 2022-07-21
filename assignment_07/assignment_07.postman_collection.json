@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "891143c9-4fc9-472a-aaad-6ccee1d42860",
+		"name": "assignment_07",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/signup",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/signin",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profileUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ali\",\r\n    \"phone\": \"01142255517\",\r\n    \"gender\": \"male\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfilePic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ahmed/Desktop/thispersondoesnotexist_06.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/pic",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"pic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfileCoverPic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_01.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_02.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_03.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_04.jpg",
+										"/C:/Users/ahmed/Desktop/VINACAL-570ES-PLUS.exe"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/coverPic",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"coverPic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "sendMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageBody\": \"You are beautiful.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/message/6297c32ca943413d5ba5638a",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"message",
+								"6297c32ca943413d5ba5638a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileMessages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/messages",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMessage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/message/629e685a9db3b7dec4cf214c",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"message",
+								"629e685a9db3b7dec4cf214c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "channel",
+			"value": "/api/dev/v1",
+			"type": "default"
+		},
+		{
+			"key": "auth",
+			"value": "/auth",
+			"type": "default"
+		},
+		{
+			"key": "user",
+			"value": "/user",
+			"type": "default"
+		},
+		{
+			"key": "message",
+			"value": "/message",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTdjMzJjYTk0MzQxM2Q1YmE1NjM4YSIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1NDExMzc5Nn0.Ku0EHITDpXs9UUGjJo3-3cn_t_MwVSh3XVBgFHAYXc0",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,708 @@
+openapi: 3.0.0
+info:
+  title: exam_01
+  version: 1.0.0
+servers:
+  - url: http://{{domain}}{{channel}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: administration
+  - name: auth
+  - name: user
+  - name: product
+  - name: comment
+paths:
+  /admin/users:
+    get:
+      tags:
+        - administration
+      summary: get all users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/{id}/role:
+    patch:
+      tags:
+        - administration
+      summary: change roles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                role: admin
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: user_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/{id}/block:
+    patch:
+      tags:
+        - administration
+      summary: block user
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: user_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/{id}/delete:
+    delete:
+      tags:
+        - administration
+      summary: delete user
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: user_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/user/{id}/soft-delete:
+    patch:
+      tags:
+        - administration
+      summary: soft delete user
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: user_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/product/{id}/delete:
+    delete:
+      tags:
+        - administration
+      summary: delete product
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/product/{id}/soft-delete:
+    patch:
+      tags:
+        - administration
+      summary: soft delete product
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/comment/{id}/soft-delete:
+    patch:
+      tags:
+        - administration
+      summary: soft delete comment
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: comment_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/signup:
+    post:
+      tags:
+        - auth
+      summary: signup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: takened126@jrvps.com
+                password: '123'
+                cPassword: '123'
+                age: '26'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: reledam476@kahase.com
+                password: '123'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/logout:
+    post:
+      tags:
+        - auth
+      summary: logout
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/sendCode:
+    post:
+      tags:
+        - auth
+      summary: forget password request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: reledam476@kahase.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/forgetPassword:
+    patch:
+      tags:
+        - auth
+      summary: forget password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: reledam476@kahase.com
+                newPassword: '123'
+                cNewPassword: '123'
+                code: '4977'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile:
+    get:
+      tags:
+        - user
+      summary: display profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/update:
+    patch:
+      tags:
+        - user
+      summary: update profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: takened126@jrvps.com
+                phone: '01094400928'
+                gender: male
+                age: '26'
+                firstName: Ahmed
+                lastName: Mohamed
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/password:
+    patch:
+      tags:
+        - user
+      summary: upload password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                oldPassword: '123'
+                newPassword: '1234'
+                cNewPassword: '1234'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/delete:
+    delete:
+      tags:
+        - user
+      summary: delete user
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/pic:
+    patch:
+      tags:
+        - user
+      summary: updateProfilePic
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/coverPic:
+    patch:
+      tags:
+        - user
+      summary: updateProfileCoverPic
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/qr:
+    get:
+      tags:
+        - user
+      summary: qr
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/profile/deActive:
+    post:
+      tags:
+        - user
+      summary: deActive
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /user/get-all-users:
+    get:
+      tags:
+        - user
+      summary: get all users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/add:
+    post:
+      tags:
+        - product
+      summary: add product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                productTitle: iphone
+                productDesc: very expensive useless phone
+                productPrice: '1200'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/update:
+    patch:
+      tags:
+        - product
+      summary: update product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                productTitle: samsung
+                productDesc: very cheap useless phone
+                productPrice: '120'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/delete:
+    delete:
+      tags:
+        - product
+      summary: delete product
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/soft-delete:
+    patch:
+      tags:
+        - product
+      summary: soft delete product
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/like:
+    patch:
+      tags:
+        - product
+      summary: like product
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/wishlist:
+    patch:
+      tags:
+        - product
+      summary: Add product to wishlist
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /product/{id}/hide:
+    patch:
+      tags:
+        - product
+      summary: hide product
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /comment/add:
+    post:
+      tags:
+        - comment
+      summary: add comment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                productId: product_id
+                commentBody: this is a comment
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /comment/{commentId}/{productId}/reply:
+    post:
+      tags:
+        - comment
+      summary: replay
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                replyContent: reply on reply
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: commentId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: comment_id
+        - name: productId
+          in: path
+          schema:
+            type: string
+          required: true
+          example: product_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /comment/{id}/update:
+    patch:
+      tags:
+        - comment
+      summary: update comment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                commentBody: updated
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: comment_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /comment/{id}/delete:
+    delete:
+      tags:
+        - comment
+      summary: delete comment
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: comment_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /comment/{id}/like:
+    patch:
+      tags:
+        - comment
+      summary: like comment
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: comment_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

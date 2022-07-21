@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "e1fe9af6-65f6-4975-8969-384d7c5c931a",
+		"name": "assignment_05",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test.test\",\r\n    \"phone\": \"01000000000\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signup",
+							"host": [
+								"{{domain}}signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.test0\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}signin",
+							"host": [
+								"{{domain}}signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2FiOTIxMDM5ODY3Y2I3ZDFiNjAxYSIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MjIzMzUxNn0.Nb2lBl1ZUFUgrIj2NSc7ofcmYbW4fVZ94pPCt3PQDcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated33333\",\r\n    \"phone\": \"01234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}update",
+							"host": [
+								"{{domain}}update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2FiOTIxMDM5ODY3Y2I3ZDFiNjAxYSIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MjIzMzUxNn0.Nb2lBl1ZUFUgrIj2NSc7ofcmYbW4fVZ94pPCt3PQDcU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}delete",
+							"host": [
+								"{{domain}}delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}allUsers",
+							"host": [
+								"{{domain}}allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}user/627abaab38337490848e9a40",
+							"host": [
+								"{{domain}}user"
+							],
+							"path": [
+								"627abaab38337490848e9a40"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2MyMzU0MWRlZWZjOTQyZTQ1ODI5NCIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MjMwMjc5M30.BtsF6Iwiauv_MR2kmynkqh9wS44FW9cdDvXwEo2NWG4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"product\",\r\n    \"description\": \"description ....\",\r\n    \"price\": \"1200\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}addProduct",
+							"host": [
+								"{{domain}}addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2MyMzU0MWRlZWZjOTQyZTQ1ODI5NCIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MjMwMjY4Nn0.nQx8Fhm2bVQ7ECZwzSPmVcz10hVJxBir__8jiAXq044",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"627c22a898cbf7dab425b6bc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}deleteProduct",
+							"host": [
+								"{{domain}}deleteProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2MyMzU0MWRlZWZjOTQyZTQ1ODI5NCIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MjMwMjc5M30.BtsF6Iwiauv_MR2kmynkqh9wS44FW9cdDvXwEo2NWG4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"627c23dc1deefc942e4582a4\",\r\n    \"title\": \"updated\",\r\n    \"description\": \"updated\",\r\n    \"price\": \"4000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}updateProduct",
+							"host": [
+								"{{domain}}updateProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsWithTheirOwnerInformations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}getAllProductsWithTheirOwnerInformations",
+							"host": [
+								"{{domain}}getAllProductsWithTheirOwnerInformations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsWithTheirOwnerInformations Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}getAllProductsCreatedYesterday",
+							"host": [
+								"{{domain}}getAllProductsCreatedYesterday"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000/",
+			"type": "default"
+		}
+	]
+}

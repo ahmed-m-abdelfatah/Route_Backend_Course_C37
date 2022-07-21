@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "0f74d084-1066-45e5-8aa1-256dde8f5949",
+		"name": "assignment_08",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "administration",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{admin}}/users",
+							"host": [
+								"{{domain}}{{channel}}{{admin}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"hr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{admin}}/user/62ac948f1d81821ce406dd29/role",
+							"host": [
+								"{{domain}}{{channel}}{{admin}}"
+							],
+							"path": [
+								"user",
+								"62ac948f1d81821ce406dd29",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{admin}}/user/62ac948f1d81821ce406dd29/block",
+							"host": [
+								"{{domain}}{{channel}}{{admin}}"
+							],
+							"path": [
+								"user",
+								"62ac948f1d81821ce406dd29",
+								"block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{admin}}/user/62a8f677f05848d63f650f6a/delete",
+							"host": [
+								"{{domain}}{{channel}}{{admin}}"
+							],
+							"path": [
+								"user",
+								"62a8f677f05848d63f650f6a",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"@John1\",\r\n    \"email\": \"rokadij518@qqhow.com\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\",\r\n    \"age\": \"18\",\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/signup",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nivogas133@mahazai.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/login",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/logout",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rokadij518@qqhow.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/sendCode",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"sendCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rokadij518@qqhow.com\",\r\n    \"newPassword\": \"1234\",\r\n    \"cNewPassword\": \"1234\",\r\n    \"code\": \"8511\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/forgetPassword",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "display profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"01000000000\",\r\n    \"gender\": \"male\",\r\n    \"age\": \"20\",\r\n    \"email\": \"nivogas133@mahazai.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/update",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"1234\",\r\n    \"newPassword\": \"12345\",\r\n    \"cNewPassword\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/password",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfilePic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/ahmed/Desktop/thispersondoesnotexist_06.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/pic",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"pic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfileCoverPic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_01.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_02.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_03.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_04.jpg",
+										"/C:/Users/ahmed/Desktop/thispersondoesnotexist_05.jpg"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/coverPic",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"coverPic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QR",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/qr",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"qr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deActive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile/deActive",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile",
+								"deActive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "channel",
+			"value": "/api/dev/v1",
+			"type": "default"
+		},
+		{
+			"key": "auth",
+			"value": "/auth",
+			"type": "default"
+		},
+		{
+			"key": "user",
+			"value": "/user",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYjIyZGUyYzIyYjdlZmI3YzNkNmYyZCIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1NTg0NjU5OX0.3VYp3E5x5iyf3c9SSZzBpnHOceH89NzyhGEJZRmUSns",
+			"type": "default"
+		},
+		{
+			"key": "admin",
+			"value": "/admin",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "name": "olx api",
+  "routes": [
+    {
+      "dest": "/app.js",
+      "src": "/(.*)"
+    }
+  ],
+  "version": 2
+}

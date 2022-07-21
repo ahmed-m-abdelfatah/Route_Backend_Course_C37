@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "a46074f8-4a19-4adf-b86d-74a5ac1e4624",
+		"name": "assignment_06",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"123\",\r\n    \"cPassword\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/signup",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jhon@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{auth}}/signin",
+							"host": [
+								"{{domain}}{{channel}}{{auth}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGQzZjY5NTg3MmFiZjAzNmRiMDcwYiIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MzQyNTc1OH0.o7gq8p_vhnizPKDISzv7PJE8C3kj7NnezkZM45AuFB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profileUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGQzZjY5NTg3MmFiZjAzNmRiMDcwYiIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MzQyNTc1OH0.o7gq8p_vhnizPKDISzv7PJE8C3kj7NnezkZM45AuFB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ali\",\r\n    \"phone\": \"01011100101\",\r\n    \"gender\": \"male\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{user}}/profile",
+							"host": [
+								"{{domain}}{{channel}}{{user}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "message",
+			"item": [
+				{
+					"name": "sendMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"messageBody\": \"You are beautiful.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/message/628d3f695872abf036db070b",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"message",
+								"628d3f695872abf036db070b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfileMessages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGQzZjY5NTg3MmFiZjAzNmRiMDcwYiIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MzUwNjY4OX0.kdtrHLsgzzA22IHZfxIXNhYBXXug8wRtIECorEmpYrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/messages",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMessage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGQzZjY5NTg3MmFiZjAzNmRiMDcwYiIsImlzU2lnbmVkSW4iOnRydWUsImlhdCI6MTY1MzUwNjY4OX0.kdtrHLsgzzA22IHZfxIXNhYBXXug8wRtIECorEmpYrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}{{channel}}{{message}}/message/628e88b48b462213fbf3d912",
+							"host": [
+								"{{domain}}{{channel}}{{message}}"
+							],
+							"path": [
+								"message",
+								"628e88b48b462213fbf3d912"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "channel",
+			"value": "/api/dev/v1",
+			"type": "default"
+		},
+		{
+			"key": "auth",
+			"value": "/auth",
+			"type": "default"
+		},
+		{
+			"key": "user",
+			"value": "/user",
+			"type": "default"
+		},
+		{
+			"key": "message",
+			"value": "/message",
+			"type": "default"
+		}
+	]
+}
