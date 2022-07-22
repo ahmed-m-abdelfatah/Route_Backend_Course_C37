@@ -67,7 +67,10 @@ Every session on Saturday was around 6hr and on Wednesday was 1hr to 3hr
 <img src="images/mongodb.svg" alt="mongodb" width="40" height="40"/>
 </a>
 <a href="https://mongoosejs.com" target="_blank">
-<img src="images/mongoose.PNG" alt="mongoose"  height="40"/>
+<img src="images/mongoose.png" alt="mongoose" width="40"  height="40"/>
+</a>
+<a href="https://socket.io" target="_blank">
+<img src="images/socketio.svg" alt="socketio" width="40"  height="40"/>
 </a>
 <a href="https://ejs.co" target="_blank">
 <img src="images/ejs.svg" alt="ejs" width="40" height="40"/>
