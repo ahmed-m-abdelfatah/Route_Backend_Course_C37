@@ -51,3 +51,27 @@ Every session on Saturday was around 6hr and on Wednesday was 1hr to 3hr
 ## Other resources
 
 - https://youtu.be/HJGWu0cZUe8
+
+## Course topics
+
+<a href="https://nodejs.org/en" target="_blank">
+<img src="images/nodejs.svg" alt="nodejs" width="40" height="40"/>
+</a>
+<a href="https://dev.mysql.com/doc" target="_blank">
+<img src="images/mysql.svg" alt="mysql" width="40" height="40"/>
+</a>
+<a href="https://sequelize.org" target="_blank">
+<img src="images/sequelize.svg" alt="sequelize" width="40" height="40"/>
+</a>
+<a href="https://www.mongodb.com" target="_blank">
+<img src="images/mongodb.svg" alt="mongodb" width="40" height="40"/>
+</a>
+<a href="https://mongoosejs.com" target="_blank">
+<img src="images/mongoose.PNG" alt="mongoose"  height="40"/>
+</a>
+<a href="https://ejs.co" target="_blank">
+<img src="images/ejs.svg" alt="ejs" width="40" height="40"/>
+</a>
+<a href="https://graphql.org" target="_blank">
+<img src="images/graphql.svg" alt="graphql" width="40" height="40"/>
+</a>
