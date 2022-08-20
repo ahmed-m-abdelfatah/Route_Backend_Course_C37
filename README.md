@@ -78,3 +78,7 @@ Every session on Saturday was around 6hr and on Wednesday was 1hr to 3hr
 <a href="https://graphql.org" target="_blank">
 <img src="images/graphql.svg" alt="graphql" width="40" height="40"/>
 </a>
+
+## Certificate
+
+![Course_Certificate](./images/certificate.jpeg)
