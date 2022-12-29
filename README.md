@@ -43,9 +43,9 @@ Every session on Saturday was around 6hr and on Wednesday was 1hr to 3hr
   - `[20]` Wednesday 29 June 2022
 - Mahmoud Elwan
   - `[21]` Saturday 02 July 2022
-  - http://route-exam-01-node.herokuapp.com/docs
+  - https://route-exam-01-node.onrender.com/docs
   - https://github.com/ahmed-m-abdelfatah/password_protected_file_sharing_node_js
-  - https://node-file-sharing-01.herokuapp.com
+  - https://node-file-sharing-01.onrender.com
   - `[22]` Saturday 16 July 2022
 
 ## Other resources
